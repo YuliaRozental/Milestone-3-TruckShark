@@ -1,0 +1,38 @@
+img {
+    height: 400px;
+    width: 700px;
+}
+
+.page-container {
+    height: 500px;
+    background-position: center;
+    margin: 2em auto;
+    border-radius: 1em;
+    background-size: cover;
+}
+
+.logo {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.image-container {
+    height: 90px;
+    width: 140px;
+}
+
+.glass-bar {
+    font-family: var(--header-font);
+    font-size: 1.3em;
+    color: #3b3737;
+}
+
+.search {
+    margin: 1em auto;
+}
+
+.background {
+    background-image: center;
+    width: 500px;
+    height: 250px;
+}
