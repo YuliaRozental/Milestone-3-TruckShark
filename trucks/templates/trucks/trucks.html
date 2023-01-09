@@ -14,5 +14,8 @@
         <img src="{{ url_for('static', filename='assets/') }}{{truck.truck_photo}}"/>
         <a href="/trucks/{{ truck.truck_id }}">Learn more ⟩</a>
     {% endfor %}
+    <div class="callout">
+        We'd love to learn more fun facts! <a href="/facts/new">Submit some here.</a>
+    </div>
 </body>
 </html>
