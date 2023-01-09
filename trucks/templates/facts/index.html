@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetFax | Submitted Facts</title>
+    <title>TrackShark</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <H1>UserFax</H1>
+        <H1>Add new truck</H1>
         {% for fact in facts %}
             <H4>Submitted by {{ fact.submitter }}</H4>
             {{ fact.fact }}
