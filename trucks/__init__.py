@@ -22,7 +22,8 @@ def create_app():
     # index route
     @app.route("/")
     def index(): 
-        return render_template("index.html")
+        pic1 = os.path.join(app.config['UPLOAD_FOLDER'], 'isaac-benhesed--4K1IMX_EQc-unsplash.jpg')
+        return render_template("index.html", user_image=pic1)
 
     # register truck blueprint
     from . import truck
