@@ -11,8 +11,6 @@ Truck Shark App also allows food truck owners to create a business account and e
 
 # Project Requirements
 
-To have a successful build of our full-stack project a few tools and libraries should be already installed and accessible in the terminal.
-
 * Python3 - the language that powers Flask
 * Node JS - used to pull into our world the React magic
 * Yarn - used to install Node JS packages
