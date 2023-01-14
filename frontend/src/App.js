@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './Components/login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from "./Components/login";
 import SignUp from "./Components/signup";
+import Profile from "./Components/Profile";
+import NavBar from "./Components/NavBar";
+import Header from "./Components/Header";
+import Home from "./Components/Home"
 import axios from 'axios';
+import useToken from "./Components/useToken";
 
 function App() {
 
   const [profileData, setProfileData] = useState(null)
+  const { token, removeToken, setToken } = useToken();
 
   function getData() {
     axios({
@@ -28,48 +34,24 @@ function App() {
         }
     })}
 
+//sets up all routes 
   return (
-    <Router>
-    <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-        <div className="container"> 
-        <Link className="navbar-brand" to={'/sign-in'}>
-        </Link>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-            <p>To get your profile details: </p><button onClick={getData}>Click me</button>
-            {profileData && <div>
-              <p>Profile name: {profileData.profile_name}</p>
-              <p>About me: {profileData.about_me}</p>
-            </div>
-            }
-            <Link className="nav-link" to={'/sign-in'}>
-                Login
-            </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to={'/sign-up'}>
-                Sign up
-              </Link>
-            </li>
-          </ul>
-        </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar/>
+        <Header token={removeToken}/>
+        {!token && token!=="" &&token!== undefined?  
+        <Login setToken={setToken} />
+        :(
+          <>
+            <Routes>
+              <Route exact path="/profile" element={<Profile token={token} setToken={setToken}/>}></Route>
+            </Routes>
+          </>
+        )}
       </div>
-    </nav>
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <Routes>
-          <Route exact path="/" element={<Login />} />
-          <Route path="/sign-in" element={<Login />} />
-          <Route path="/sign-up" element={<SignUp />} />
-        </Routes>
-      </div>
-    </div>
-      <h3>Customer Login</h3>
-    </div>
-    </Router>
-  )
-  }
+    </BrowserRouter>  
+  );
+}
   
 export default App
