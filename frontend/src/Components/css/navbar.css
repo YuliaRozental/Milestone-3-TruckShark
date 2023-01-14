@@ -1,0 +1,17 @@
+img {
+    width: 7.5rem;
+    height: 4.3rem;
+}
+
+.search {
+    display: flex;
+}
+
+.customers {
+    padding-left: 50px;
+    padding-right: 60px;
+}
+
+.login {
+    padding-right: 30px;
+}
