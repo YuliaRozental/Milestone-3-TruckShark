@@ -6,7 +6,6 @@ import Login from "./Components/login";
 import SignUp from "./Components/signup";
 import Profile from "./Components/Profile";
 import NavBar from "./Components/NavBar";
-import Header from "./Components/Header";
 import Home from "./Components/Home"
 import axios from 'axios';
 import useToken from "./Components/useToken";
@@ -39,13 +38,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar/>
-        <Header token={removeToken}/>
+        <Home token={removeToken}/>
         {!token && token!=="" &&token!== undefined?  
         <Login setToken={setToken} />
         :(
           <>
             <Routes>
               <Route exact path="/profile" element={<Profile token={token} setToken={setToken}/>}></Route>
+              <Route exact path='/' element={<Home/>} />
+              <Route exact path='/' element={<SignUp/>} />
             </Routes>
           </>
         )}

@@ -1,6 +1,15 @@
+.navbar {
+    padding-top: 40px;
+}
+
 img {
-    width: 7.5rem;
-    height: 4.3rem;
+    width: 9rem;
+    height: 4.5rem;
+    padding-left: 20px;
+}
+
+.search-bar {
+    font-size: 20px;
 }
 
 .search {
@@ -13,5 +22,12 @@ img {
 }
 
 .login {
-    padding-right: 30px;
+    padding-right: 50px;
+}
+
+.button {
+    border-radius: 10px;
+    background-color: orange;
+    box-shadow: 2px 2px rgb(64, 63, 63);
+    font-size: 20px;
 }
