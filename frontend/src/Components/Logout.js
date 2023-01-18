@@ -1,6 +1,7 @@
+import React from "react";
 import axios from "axios";
 
-function Home(props) {
+function Logout(props) {
 
   function logMeOut() {
     axios({
@@ -19,7 +20,6 @@ function Home(props) {
 
     return(
         <header className="App-header">
-         <h1>Welcome to the Truck Shark</h1>
           <button onClick={logMeOut}> 
           Logout
           </button>
@@ -27,4 +27,4 @@ function Home(props) {
     )
 }
 
-export default Home;
+export default Logout;

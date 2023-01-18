@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from "axios";
+import '../Components/css/login.css';
 
 function Login(props) {
 
@@ -41,9 +42,9 @@ function Login(props) {
       )}
 
     return (
-      <div>
+      <div className="wxy">
         <h1>Login</h1>
-          <form className="login">
+          <form className="loginForm">
             <input onChange={handleChange} 
                   type="email"
                   text={loginForm.email} 
@@ -63,4 +64,4 @@ function Login(props) {
     );
 }
 
-export default Login;
+export default Login

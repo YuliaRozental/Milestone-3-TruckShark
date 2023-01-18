@@ -1,18 +1,22 @@
-import React, { useState } from "react";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from "./Components/login";
-import SignUp from "./Components/signup";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import SignUp from "./Components/Signup";
+import Find from "./Components/Find";
 import Profile from "./Components/Profile";
 import NavBar from "./Components/NavBar";
-import Home from "./Components/Home"
+import Logout from "./Components/Logout";
+import Customers from "./Components/Customers";
+import Owners from "./Components/Owners";
+import LogIn from './Components/LogIn';
 import axios from 'axios';
 import useToken from "./Components/useToken";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
-  const [profileData, setProfileData] = useState(null)
+  
+  const [profileData, setProfileData] = useState(null);
   const { token, removeToken, setToken } = useToken();
 
   function getData() {
@@ -33,26 +37,19 @@ function App() {
         }
     })}
 
+
 //sets up all routes 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar/>
-        <Home token={removeToken}/>
-        {!token && token!=="" &&token!== undefined?  
-        <Login setToken={setToken} />
-        :(
-          <>
-            <Routes>
-              <Route exact path="/profile" element={<Profile token={token} setToken={setToken}/>}></Route>
-              <Route exact path='/' element={<Home/>} />
-              <Route exact path='/' element={<SignUp/>} />
-            </Routes>
-          </>
-        )}
-      </div>
-    </BrowserRouter>  
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route exact path="/customers" element={Customers} />
+        <Route exact path="/owners" element={Owners} />
+        <Route exact path="/login" element={LogIn()} />
+        <Route exact path="/find" element={Find} />
+      </Routes>
+    </Router>
   );
-}
-  
-export default App
+  }
+
+export default App;
