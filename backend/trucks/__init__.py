@@ -1,32 +1,30 @@
-#config
+# config
+from distutils.log import debug
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import create_access_token, JWTManager, get_jwt, get_jwt_identity, jwt_required, unset_jwt_cookies
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import json
-import os
 
-#factory
-def create_app(): 
+from . import models
+
+# factory
+
+
+def create_app():
     app = Flask(__name__)
 
     app.config["JWT_SECRET_KEY"] = "chane-this"
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
     jwt = JWTManager(app)
-    
+
     # database config
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123qwe@localhost:5432/truckshark'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    from . import models
     models.db.init_app(app)
-    migrate = Migrate(app, models.db)      
-
-    # index route
-    @app.route("/")
-    def index(): 
-        return render_template("index.html")
+    migrate = Migrate(app, models.db)
 
     @app.after_request
     def refresh_expiring_jwts(response):
@@ -38,11 +36,11 @@ def create_app():
                 access_token = create_access_token(identity=get_jwt_identity())
                 data = response.get_json()
                 if type(data) is dict:
-                    data["access_token"] = access_token 
+                    data["access_token"] = access_token
                     response.data = json.dumps(data)
             return response
         except (RuntimeError, KeyError):
-        # Case where there is not a valid JWT. Just return the original respone
+            # Case where there is not a valid JWT. Just return the original respone
             return response
 
     @app.route('/token', methods=["POST"])
@@ -53,7 +51,7 @@ def create_app():
             return {"msg": "Wrong email or password"}, 401
 
         access_token = create_access_token(identity=email)
-        response = {"access_token":access_token}
+        response = {"access_token": access_token}
         return response
 
     @app.route("/logout", methods=["POST"])
@@ -75,7 +73,7 @@ def create_app():
     from . import truck
     app.register_blueprint(truck.bp)
 
-    # register fact blueprint 
+    # register fact blueprint
     from . import fact
     app.register_blueprint(fact.bp)
 
