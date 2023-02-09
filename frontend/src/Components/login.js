@@ -57,11 +57,10 @@ function Login(props) {
                   name="password" 
                   placeholder="Password" 
                   value={loginForm.password} />
-
-          <button onClick={logMeIn}>Submit</button>
-        </form>
+            <button onClick={logMeIn}>Submit</button>
+          </form>
       </div>
     );
 }
 
-export default Login
+export default Login;

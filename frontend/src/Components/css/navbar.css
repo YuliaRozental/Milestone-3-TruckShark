@@ -23,7 +23,7 @@ img {
 }
 
 .customer {
-    padding-left: 80px;
+    padding-left: 105px;
     padding-right: 120px;
 }
 
@@ -35,18 +35,19 @@ img {
 .button {
     border-radius: 10px;
     background-color: orange;
-    box-shadow: 2px 2px rgb(64, 63, 63);
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .hero-text {
     text-align: center;
-    position: absolute;
+    position: static;
     color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 200;
+    padding-top: 200px;
 }
 
 .button-i {
@@ -54,9 +55,15 @@ img {
     width: 500px;
     border-radius: 10px;
     background-color: orange;
-    box-shadow: 2px 2px rgb(64, 63, 63);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 26px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.button-x {
+    border-radius: 10px;
+    border-color: white;
+    background-color: white;
 }
 
 .wx {
@@ -65,13 +72,9 @@ img {
 }
 
 .hero-image {
-    height: 900px;
+    height: 800px;
     background-position: center;
-    background-image: url("/Users/Yulia/nyu/Milestone-3/frontend/src/assets/home.png");
+    background-image: url("https://as1.ftcdn.net/v2/jpg/02/09/06/52/1000_F_209065205_bxKXoB2xllXFOEyMjD1deiKEHnCZRVEs.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-h1 {
-    padding-bottom: 50px;
 }
