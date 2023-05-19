@@ -1,29 +1,28 @@
-.navbar {
-    padding-top: 40px;
+.navbar{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-}
-
-.group {
-    display: flex;
-    text-align: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 103vw;
 }
 
 img {
     width: 9rem;
     height: 4.5rem;
     padding-left: 20px;
+    margin-right: 60px;
+    margin-left: 20px;
 }
 
 .search-bar {
-    font-size: 26px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .customer {
-    padding-left: 105px;
+    padding-left: 90px;
     padding-right: 120px;
 }
 
@@ -34,11 +33,27 @@ img {
 
 .button {
     border-radius: 10px;
-    background-color: orange;
+    background-image: linear-gradient(to right, #FFB75E 0%, #ED8F03  51%, #FFB75E  100%);
     border-color: antiquewhite;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 24px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    flex: 1 1 auto;
+    margin: 1px;
+    padding: 3px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
 }
 
 .hero-text {
@@ -50,25 +65,24 @@ img {
     padding-top: 200px;
 }
 
-.button-i {
-    height: 65px;
-    width: 500px;
-    border-radius: 10px;
-    background-color: orange;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    font-size: 26px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .button-x {
     border-radius: 10px;
-    border-color: white;
-    background-color: white;
-}
-
-.wx {
-    height: 33px;
-    margin-bottom: 0.2em;
+    text-align: center;
+    border-color: antiquewhite;
+    box-shadow: antiquewhite;
+    background-image: linear-gradient(to right, #FFB75E 0%, #ED8F03  51%, #FFB75E  100%);
+    margin-left: 20px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
 }
 
 .hero-image {
@@ -77,4 +91,99 @@ img {
     background-image: url("https://as1.ftcdn.net/v2/jpg/02/09/06/52/1000_F_209065205_bxKXoB2xllXFOEyMjD1deiKEHnCZRVEs.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 13px; 
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+
+.button-75 {
+    align-items: center;
+    background-image: linear-gradient(to right, #FFB75E 0%, #ED8F03  51%, #FFB75E  100%);
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 0 auto;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    height: 54px;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+.button:active {
+    outline: 0;
+}
+  
+.button:hover {
+    outline: 0;
+}
+  
+.button span {
+    transition: all 200ms;
+}
+  
+.button:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+.button-x:active {
+    outline: 0;
+}
+  
+.button-x:hover {
+    outline: 0;
+}
+  
+.button-x span {
+    transition: all 200ms;
+}
+  
+.button-x:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+.button-75:active {
+    outline: 0;
+}
+  
+.button-75:hover {
+    outline: 0;
+}
+  
+.button-75 span {
+    transition: all 200ms;
+}
+  
+.button-75:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+  
+@media screen and (max-width: 991px) {
+    .button-75 {
+      font-size: 15px;
+      height: 50px;
+    }
+  
+.button-75 span {
+      line-height: 50px;
+    }
 }

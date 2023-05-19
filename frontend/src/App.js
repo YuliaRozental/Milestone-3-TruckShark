@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import SignUp from "./Components/Signup";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SignUp from "./users/Signup";
 import Find from "./Components/Find";
 import Profile from "./Components/Profile";
-import NavBar from "./Components/NavBar";
-import Logout from "./Components/Logout";
+import Home from "./Home";
+import Logout from "./users/Logout";
 import Customers from "./Components/Customers";
 import Owners from "./Components/Owners";
-import LogIn from './Components/LogIn';
+import LogIn from './users/LogIn';
+import Error404 from './Error404';
 import axios from 'axios';
-import useToken from "./Components/useToken";
+import useToken from "./users/useToken";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
-  
   const [profileData, setProfileData] = useState(null);
   const { token, removeToken, setToken } = useToken();
 
@@ -39,14 +39,15 @@ function App() {
 
 
 //sets up all routes 
+
   return (
     <Router>
-      <NavBar />
+      <Home />
       <Routes>
-        <Route exact path="/customers" element={Customers} />
-        <Route exact path="/owners" element={Owners} />
-        <Route exact path="/login" element={LogIn()} />
-        <Route exact path="/find" element={Find} />
+        <Route exact path="/login" element={<LogIn />} />
+        <Route exact path="/customers" element={<Customers />} />
+        <Route exact path="/owners" element={<Owners />} />
+        <Route exact path="/finds" element={<Find />} />
       </Routes>
     </Router>
   );

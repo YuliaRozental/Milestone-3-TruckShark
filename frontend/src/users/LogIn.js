@@ -39,7 +39,7 @@ function Login(props) {
       const {value, name} = event.target
       setloginForm(prevNote => ({
           ...prevNote, [name]: value})
-      )}
+      )} 
 
     return (
       <div className="wxy">
@@ -64,3 +64,6 @@ function Login(props) {
 }
 
 export default Login;
+
+
+
