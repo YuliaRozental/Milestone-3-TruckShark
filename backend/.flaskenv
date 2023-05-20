@@ -1,2 +1,3 @@
 FLASK_APP=app.py
-FLASK_VENV=development
+FLASK_ENV=development
+FLASK_RUN_PORT=5001

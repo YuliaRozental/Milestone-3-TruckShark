@@ -6,6 +6,7 @@ from flask_jwt_extended import create_access_token, JWTManager, get_jwt, get_jwt
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import json
+from flask_cors import CORS
 
 from . import models
 
@@ -14,6 +15,7 @@ from . import models
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
 
     app.config["JWT_SECRET_KEY"] = "chane-this"
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
