@@ -26,20 +26,20 @@ function MapContainer() {
 
     return (
         <>
-        {!isLoaded ? (
-            <h1>Loading...</h1>
-        ) : (
-            <GoogleMap
-                zoom={14}
-                onLoad={handleLoad}
-                onDragEnd={handleCenter}
-                center={position}
-                id="map"
-                mapContainerStyle={{
-                    height: '900px',
-                    width: '80%'
-                }}
-            />)}
+            {!isLoaded ? (
+                <h1>Loading...</h1>
+            ) : (
+                <GoogleMap
+                    zoom={14}
+                    onLoad={handleLoad}
+                    onDragEnd={handleCenter}
+                    center={position}
+                    id="map"
+                    mapContainerStyle={{
+                        height: '900px',
+                        width: '80%'
+                    }}
+                />)}
         </>
     );
 }
