@@ -13,6 +13,7 @@ import Error404 from './Error404';
 import axios from 'axios';
 import useToken from "./users/useToken";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import MapContainer from './Components/MapContainer';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route exact path="/customers" element={<Customers />} />
         <Route exact path="/owners" element={<Owners />} />
         <Route exact path="/find" element={<Find />} />
+        <Route exact path="/map" element={<MapContainer/>} />
       </Routes>
     </Router>
   );
